@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+
+    <title>nexter &mdash; your home, your freedom</title>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <nav class="sidebar">
+            <button class="sidebar__btn"></button>
+        </nav>
+
+        <div class="header">
+            <img src="img/logo.png" alt="Logo nexter" class="header__logo">
+            <h3 class="heading__3">your own home:</h3>
+            <h1 class="heading__1">The ultimate personal freedom</h1>
+            <button class="btn-primary header__btn">view your property</button>
+            <div class="header__seenon-text">As seen on</div>
+            <div class="header__seenon-logo">
+                <img src="img/logo-bbc.png" alt="logo bbc">
+                <img src="img/logo-forbes.png" alt="logo forbes">
+                <img src="img/logo-techcrunch.png" alt="logo logo-techcrunch">
+                <img src="img/logo-bi.png" alt="logo bi">
+            </div>
+        </div>
+
+        <div class="realtors">
+            <h3 class="heading__3 realtors__heading">top 3 realtors</h3>
+            <div class="realtors__profiles">
+
+                <div class="realtors__profile-each" 
+                     v-for="realtor in realtors">
+
+                    <img :src="realtor.img" 
+                         :alt="'realtor'+ realtor.name" 
+                         class="realtors__profile-img">
+                         
+                    <div class="realtors__info">
+                        <h4>
+                            {{ realtor.name }}
+                        </h4>
+                        <p> {{ realtor.houseSold }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="features">
+            <div class="feature" v-for="feature in features">
+                <svg class="feature__icon">
+                    <use :xlink:href="feature.icon"></use>
+                </svg>
+                <h4 class="heading__4 heading__4--dark">{{ feature.heading }}</h4>
+                <p class="feature__content"> {{ feature.content }} </p>
+            </div>
+        </section>
+
+        <div class="story__picture">
+            <img src="img/story-1.jpeg" alt="story one" class="story__picture--1">
+            <img src="img/story-2.jpeg" alt="story two" class="story__picture--2">
+        </div>
+
+        <div class="story__content">
+            <h3 class="heading__3 mb-sm">
+                happy customers
+            </h3>
+            <h2 class="heading__2 mb-md">
+                &ldquo; The best decision of our lives &rdquo;
+            </h2>
+            <p class="story__quote mb-lg">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur
+                voluptatibus. Quidem consequatur harum volupta!
+            </p>
+            <button class="btn-primary">
+                find your own home
+            </button>
+        </div>
+
+        <section class="houses">
+            <div class="house-card" v-for="house in houses">
+                <img :src="house.img" :alt="house.title" class="house-card__img">
+                <svg class="house-card__heart">
+                    <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+                </svg>
+                <h4 class="house-card__title">
+                    {{ house.title }}
+                </h4>
+                <div class="house-card__location">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+                    </svg>
+                    <p>{{house.location}}</p>
+                </div>
+                <div class="house-card__room">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-profile-male"></use>
+                    </svg>
+                    <p>{{house.room}}</p>
+                </div>
+                <div class="house-card__square">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-expand"></use>
+                    </svg>
+                    <p>{{house.square}}</p>
+                </div>
+                <div class="house-card__money">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-key"></use>
+                    </svg>
+                    <p>{{house.money}}</p>
+                </div>
+                <button class="btn-primary house-card__btn">
+                    contact realtors
+                </button>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <figure v-for="n in 14" class="gallery__contain" :class="'gallery__contain--'+ n">
+                <img :src="'img/gal-'+n+'.jpeg'" :alt="'gallery ' + n" class="gallery__img ">
+            </figure>
+            <!-- <figure class="gallery__contain gallery__contain--2" >
+                <img src="img/gal-2.jpeg" alt="gallery 2" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--3" >
+                <img src="img/gal-3.jpeg" alt="gallery 3" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--4" >
+                <img src="img/gal-4.jpeg" alt="gallery 4" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--5" >
+                <img src="img/gal-5.jpeg" alt="gallery 5" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--6" >
+                <img src="img/gal-6.jpeg" alt="gallery 6" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--7" >
+                <img src="img/gal-7.jpeg" alt="gallery 7" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--8" >
+                <img src="img/gal-8.jpeg" alt="gallery 8" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--9" >
+                <img src="img/gal-9.jpeg" alt="gallery 9" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--10" >
+                <img src="img/gal-10.jpeg" alt="gallery 10" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--11" >
+                <img src="img/gal-11.jpeg" alt="gallery 11" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--12" >
+                <img src="img/gal-12.jpeg" alt="gallery 12" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--13" >
+                <img src="img/gal-13.jpeg" alt="gallery 13" class="gallery__img">
+            </figure>
+            <figure class="gallery__contain gallery__contain--14" >
+                <img src="img/gal-14.jpeg" alt="gallery 14" class="gallery__img">
+            </figure> -->
+        </section>
+        <section class="footer">
+            <nav class="nav">
+                <a href="#" class="nav__quicklink" v-for="quicklink in quicklinks">
+                    {{ quicklink }}
+                </a>
+            </nav>
+            <div class="nav__content">
+                <small >© Copyright 2017 by Jonas Schmedtmann. Feel free to use this project for
+                    your own purposes. This does NOT apply if you plan to produce your own course or tutorials based on
+                    this project.
+                </small>
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
