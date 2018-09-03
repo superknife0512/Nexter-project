@@ -3,32 +3,32 @@ new Vue({
     data:{
         features:[
             {
-                icon: '../img/sprite.svg#icon-global',
+                icon: 'img/sprite.svg#icon-global',
                 heading: 'World best luxury homes',
                 content:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur voluptatibus.',
             },
             {
-                icon: '../img/sprite.svg#icon-trophy',
+                icon: 'img/sprite.svg#icon-trophy',
                 heading: 'Only the best properties',
                 content:'Voluptatum mollitia quae. Vero ipsum sapiente molestias accusamus rerum sed a eligendi aut quia.',
             },
             {
-                icon: '../img/sprite.svg#icon-map-pin',
+                icon: 'img/sprite.svg#icon-map-pin',
                 heading: 'All homes in top location',
                 content:'Tenetur distinctio necessitatibus pariatur voluptatibus quidem consequatur harum.',
             },
             {
-                icon: '../img/sprite.svg#icon-key',
+                icon: 'img/sprite.svg#icon-key',
                 heading: 'New home in one week',
                 content:'Vero ipsum sapiente molestias accusamus rerum. Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
             },
             {
-                icon: '../img/sprite.svg#icon-presentation',
+                icon: '/img/sprite.svg#icon-presentation',
                 heading: 'Top 1% realtors',
                 content:'Quidem consequatur harum, voluptatum mollitia quae. Tenetur distinctio necessitatibus pariatur voluptatibus',
             },
             {
-                icon: '../img/sprite.svg#icon-lock',
+                icon: 'img/sprite.svg#icon-lock',
                 heading: 'Secure payment on nexter',
                 content:'Pariatur voluptatibus quidem consequatur harum, voluptatum mollitia quae.',
             },
