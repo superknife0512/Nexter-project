@@ -23,7 +23,7 @@ new Vue({
                 content:'Vero ipsum sapiente molestias accusamus rerum. Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
             },
             {
-                icon: '/img/sprite.svg#icon-presentation',
+                icon: 'img/sprite.svg#icon-presentation',
                 heading: 'Top 1% realtors',
                 content:'Quidem consequatur harum, voluptatum mollitia quae. Tenetur distinctio necessitatibus pariatur voluptatibus',
             },
